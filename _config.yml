@@ -34,3 +34,4 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
  - jekyll-remote-theme
+ - jekyll-glossary_tooltip
