@@ -1,0 +1,36 @@
+
+title: Embedded Linux 101
+author: "Jakub Duchniewicz"
+description: > # this means to ignore newlines until "show_excerpts:"
+    Documentation for various boards and setting embedded linux on them.
+show_excerpts: true
+
+# Minima date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  skin: dark
+  date_format: "%b %-d, %Y"
+
+
+github_username: JDuchniewicz
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
+
+# Build settings
+remote_theme: jekyll/minima
+
+include:
+  - _pages
+  - _posts
+  
+exclude: 
+  - .gitignore
+  - LICENSE
+  - README.md
+    
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+ - jekyll-remote-theme
