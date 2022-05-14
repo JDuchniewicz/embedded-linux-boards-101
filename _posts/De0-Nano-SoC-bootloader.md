@@ -135,9 +135,14 @@ The script briefly looks like this:
 
 Most of the parameters can be checked either in the [UBoot documentation](http://www.denx.de/wiki/view/DULG/UBootCommandLineInterface) or via `help commandname` in the UBoot shell. However, I will explain some of the most important here:
 
-TODO: add them
+* `setenv key value` - sets the environment variable `key` to a `value`
+* `fatload` - instructs the UBoot to read the data to a given address (in our case it is `soc_system.rbf` located at partition 0:1 of mmc to be loaded to address at `fpgadata` env variable)
+* `fpga load` - loads the code to the FPGA
+* `bride enable` - enable the FPGA to HPS bridges
 
+The rest of the commands are responsible for setting the Device Tree Blob to be loaded at `fdtaddr`, setting the kernel bootImage, setting the root partition, setting the kernel bootargs and finally running the commands defined by us to start up the Linux.
 
+If the bootloader stops booting the kernel, then make sure that nothing new is necessary to add to the boot script.
 
 ## Compiling the Boot Script
 
