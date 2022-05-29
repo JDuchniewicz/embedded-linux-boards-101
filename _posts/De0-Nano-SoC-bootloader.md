@@ -46,6 +46,13 @@ Most interesting to us is: `hardware`, `software` and `sd_card`. You need to cre
 
 We will be putting UBoot, Linux Kernel, rootfs, and other _soft_ components into the `software` catalogue.
 
+## Toolchain
+
+I assume that you already know how to use a toolchain and what it is. In short, it is a set of binaries/headers/libraries that are used for cross-compilation of our bootloader, kernel and applications. It is probably best to use a reasonably fresh toolchain as they are constantly optimized and tweaked so why give all of that away. In this case we will be using ARM's toolchain (previously Linaro):
+* [arm-none-linux-gnueabihf-](https://developer.arm.com/-/media/Files/downloads/gnu-a/10.3-2021.07/binrel/gcc-arm-10.3-2021.07-aarch64-arm-none-linux-gnueabihf.tar.xz)
+
+After you obtain it remember to unpack it somewhere convenient and add it to your PATH or simply remember to prefix it to every compilation command.
+
 ## Preloader generation
 
 Since this system is quite complex, we need a preloader to set up HPS IO pins, clocking and initialize our SDRAM.
