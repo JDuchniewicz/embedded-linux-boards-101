@@ -21,6 +21,9 @@ github_username: JDuchniewicz
 # Build settings
 remote_theme: jekyll/minima
 
+header_pages:
+  - _posts/De0-Nano-SoC-bootloader.md
+
 include:
   - _pages
   - _posts
