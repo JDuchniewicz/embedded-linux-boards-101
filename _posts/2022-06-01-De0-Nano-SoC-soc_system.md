@@ -18,18 +18,18 @@ I like to keep the IP component in a separate directory (in this case under `har
 Open the Platform Designer tool and choose the pre-created `soc_system.qsys` file. It will load the default configuration of the system with many components already connected and ready to go. We need first create a block of our component and then integrate it (connect the relevant signals and interfaces, map memory and interrupts).
 
 You will be greeted by such window:
-![platform_designer](/data/platform_designer_raw.png){:class="img-responsive"}
+![platform_designer](https://github.com/JDuchniewicz/embedded-linux-boards-101/blob/github-pages/data/platform_designer_raw.png?raw=true){:class="img-responsive"}
 
 Then, add a new component:
-![platform_designer_new_component](/data/platform_designer_new component.png){:class="img-responsive"}
+![platform_designer_new_component](https://github.com/JDuchniewicz/embedded-linux-boards-101/blob/github-pages/data/platform_designer_new_component.png?raw=true){:class="img-responsive"}
 
 Add all the necessary files:
-![platform_designer_new_files](/data/platform_designer_new_files.png){:class="img-responsive"}
+![platform_designer_new_files](https://github.com/JDuchniewicz/embedded-linux-boards-101/blob/github-pages/data/platform_designer_new_files.png?raw=true){:class="img-responsive"}
 
 When you read all the files, press "Analyze Synthesis Files" and observe that no errors are displayed. If all ran successfully, you will have some signals and interfaces inferred for you. You can also add various simulation files but I left that empty.
 
 Some input and output signals should be inferred and are visible as shown below:
-![platform_designer_signals](/data/platform_designer_signals.png){:class="img-responsive"}
+![platform_designer_signals](https://github.com/JDuchniewicz/embedded-linux-boards-101/blob/github-pages/data/platform_designer_signals.png?raw=true){:class="img-responsive"}
 
 In case you are defining some Avalon or AXI interfaces, Platform Designer will kindly inform you about missing/wrong signals, as well as telling you that your direction of the signal might be wrong
 
@@ -51,9 +51,9 @@ cp soc_system.rbf sd_card/sdfs
 In case not everything runs as smoothly as you predicted or you just want to see your signals you can use the Signaltap software. Unfortunately, when you use the free Quartus License you will need to recompile everything from scratch once you decide to change a signal to track, so be warned.
 
 In the main window you first should add the relevant clock, set the sample depth (how many samples do we want to store simultaneously), choose the triggers and add signals you want to observe. I found a [short video](https://retroramblings.net/?p=1683) that explains this very concisely.
-![signaltap](/data/signaltap.png){:class="img-responsive"}
+![signaltap](https://github.com/JDuchniewicz/embedded-linux-boards-101/blob/github-pages/data/signaltap.png?raw=true){:class="img-responsive"}
 
 You can enable/disable signals and trigger whether they should trigger (no pun intended) the capture. You also can change the triggering conditions so be sure to check that.
 
 Each time you reset the board, be sure to flash the signaltap `.sof` file onto the board and start capturing of the samples. The window with the results is visible below, you can see that we have three Avalon MM writes to the Agent (or in old terms - Slave) device:
-![signaltap_capture](/data/signaltap_capture.png){:class="img-responsive"}
+![signaltap_capture](https://github.com/JDuchniewicz/embedded-linux-boards-101/blob/github-pages/data/signaltap_capture.png?raw=true){:class="img-responsive"}
